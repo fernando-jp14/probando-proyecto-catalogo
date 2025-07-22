@@ -1,40 +1,54 @@
-# Proyect_catalog
+📚 Proyecto: Catalog App - CRUD con Django
+Un mini proyecto en equipo para aprender, practicar y aplicar Django + Scrum + XP + GitHub de forma colaborativa y ágil 🚀
 
-Mini Proyecto CRUD con Django + Scrum + XP + GitHub
+👥 Equipo de Desarrollo
+💻 Integrante	🎯 Rol Asignado
+Yosias	🧭 Scrum Master
+Wilson	🧠 Product Owner
+Jhonson	👨‍💻 Developer
+Alejandro	👨‍💻 Developer
+Alex C.A	👨‍💻 Developer
 
+🎯 Objetivo General
+Desarrollar en equipo una aplicación CRUD funcional utilizando el framework Django, siguiendo buenas prácticas de desarrollo ágil, versionando el proyecto en GitHub, y colaborando como en un entorno real.
 
-👥 Integrantes
+🔄 Metodología Ágil Aplicada
+✅ Scrum (¡sí o sí!)
+📌 Roles definidos:
 
-|Sala_5|----------|Roles|
-|Yosias	  | Scrum Master|
-|Wilson	  |Product Owner|
-|Jhonson	  |Developer|
-|Alejandro    |Developer|
-|Alex C.A	  |Developer|
+Scrum Master
 
+Product Owner
 
-🎯 Objetivo general:
-Desarrollar en equipo una aplicación CRUD funcional usando Django, aplicando buenas prácticas ágiles (Scrum + XP), control de versiones con GitHub, y colaboración real.
+Developers
 
+📝 Documentación esperada:
 
-🧠 Metodología y prácticas obligatorias
-🔄 Scrum
-Asignar roles: Scrum Master, Developers (todos), y Product Owner (simulado).
+Planning: ¿Qué haremos en este sprint?
 
+Daily (breve): ¿Qué hicimos ayer? ¿Qué haremos hoy?
 
-Documentar: Planning, Dailies (breve), Review, Retrospective.
+Review: Demo del avance.
 
+Retrospective: ¿Qué salió bien? ¿Qué podemos mejorar?
 
-🛠️ XP (Extreme Programming)
-Pair Programming: trabajar al menos 1 tarea en pareja.
+⚡ Extreme Programming (XP)
+🤝 Pair Programming:
+Al menos una funcionalidad desarrollada en pareja.
 
+🧹 Refactorización:
+Aplicar mejoras conscientes al código ya escrito.
 
-Refactorización: al menos una mejora de código aplicada conscientemente.
+✅ TDD (Opcional):
+Si hay tiempo, usar pruebas automatizadas para asegurar la calidad del código antes/después de implementarlo.
 
+🛠️ Tecnologías Usadas
+🌐 Django (Backend Web)
 
-TDD (opcional si hay tiempo): aplicar tests antes/después del código en algún módulo.
+🐘 PostgreSQL o SQLite (Base de datos)
 
+🎨 HTML + CSS (Frontend)
 
+🧪 Python (lógica + pruebas)
 
-
-
+🔗 Git & GitHub (Control de versiones)
