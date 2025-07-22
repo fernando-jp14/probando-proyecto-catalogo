@@ -6,11 +6,11 @@ Mini Proyecto CRUD con Django + Scrum + XP + GitHub
 👥 Integrantes
 
 |Sala_5|----------|Roles|
-|Tracy	  | Scrum Master|
-|César	  |Product Owner|
+|Yosias	  | Scrum Master|
+|Wilson	  |Product Owner|
 |Jhonson	  |Developer|
-|Jesus        |Developer|
-|Jordan	      |Developer|
+|Alejandro    |Developer|
+|Alex C.A	  |Developer|
 
 
 🎯 Objetivo general:
