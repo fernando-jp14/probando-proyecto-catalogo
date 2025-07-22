@@ -1,54 +1,52 @@
-📚 Proyecto: Catalog App - CRUD con Django
-Un mini proyecto en equipo para aprender, practicar y aplicar Django + Scrum + XP + GitHub de forma colaborativa y ágil 🚀
+# Proyecto: Catalog App - CRUD con Django
 
-👥 Equipo de Desarrollo
-💻 Integrante	🎯 Rol Asignado
-Yosias	🧭 Scrum Master
-Wilson	🧠 Product Owner
-Jhonson	👨‍💻 Developer
-Alejandro	👨‍💻 Developer
-Alex C.A	👨‍💻 Developer
+📦 Mini proyecto grupal con enfoque ágil (Scrum + XP) usando Django y GitHub para versionamiento.
 
-🎯 Objetivo General
-Desarrollar en equipo una aplicación CRUD funcional utilizando el framework Django, siguiendo buenas prácticas de desarrollo ágil, versionando el proyecto en GitHub, y colaborando como en un entorno real.
+---
 
-🔄 Metodología Ágil Aplicada
-✅ Scrum (¡sí o sí!)
-📌 Roles definidos:
+## 📋 Resumen del Proyecto
 
-Scrum Master
+| Proyecto        | Catalog App CRUD                         |
+|-----------------|-------------------------------------------|
+| Framework       | Django (Python)                           |
+| Metodologías    | Scrum + XP (Extreme Programming)          |
+| Control de versión | Git & GitHub                         |
+| Base de datos   | SQLite o PostgreSQL                      |
+| Objetivo        | Desarrollar una app CRUD funcional en equipo |
 
-Product Owner
+---
 
-Developers
+## 👥 Integrantes y Roles
 
-📝 Documentación esperada:
+| Nombre      | Rol              |
+|-------------|------------------|
+| Yosias      | Scrum Master     |
+| Wilson      | Product Owner    |
+| Jhonson     | Developer        |
+| Alejandro   | Developer        |
+| Alex C.A    | Developer        |
 
-Planning: ¿Qué haremos en este sprint?
+---
 
-Daily (breve): ¿Qué hicimos ayer? ¿Qué haremos hoy?
+## 🎯 Objetivo General
 
-Review: Demo del avance.
+Desarrollar una **aplicación CRUD** usando Django, aplicando prácticas ágiles (Scrum + XP), trabajando en equipo, versionando con GitHub y generando experiencia colaborativa real.
 
-Retrospective: ¿Qué salió bien? ¿Qué podemos mejorar?
+---
 
-⚡ Extreme Programming (XP)
-🤝 Pair Programming:
-Al menos una funcionalidad desarrollada en pareja.
+## 🔄 Metodología Ágil Aplicada
 
-🧹 Refactorización:
-Aplicar mejoras conscientes al código ya escrito.
+### Scrum:
+- Roles definidos: Scrum Master, Product Owner, Developers.
+- Documentación esperada:
+  - Planning (Planificación del Sprint)
+  - Dailies (Breves avances diarios)
+  - Review (Demostración del producto)
+  - Retrospective (Lecciones aprendidas)
 
-✅ TDD (Opcional):
-Si hay tiempo, usar pruebas automatizadas para asegurar la calidad del código antes/después de implementarlo.
+### Extreme Programming (XP):
+- Pair Programming (al menos una tarea en parejas).
+- Refactorización (mejora consciente del código).
+- TDD (opcional, si hay tiempo).
 
-🛠️ Tecnologías Usadas
-🌐 Django (Backend Web)
-
-🐘 PostgreSQL o SQLite (Base de datos)
-
-🎨 HTML + CSS (Frontend)
-
-🧪 Python (lógica + pruebas)
-
-🔗 Git & GitHub (Control de versiones)
+---
