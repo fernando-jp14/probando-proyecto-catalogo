@@ -84,5 +84,5 @@ Desarrollar una **aplicación CRUD** usando Django, aplicando prácticas ágiles
 - Pair Programming (al menos una tarea en parejas).
 - Refactorización (mejora consciente del código).
 - TDD (opcional, si hay tiempo).
-
+-------------------------------
 ---
