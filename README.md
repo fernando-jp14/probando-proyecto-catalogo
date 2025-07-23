@@ -86,4 +86,4 @@ Desarrollar una **aplicación CRUD** usando Django, aplicando prácticas ágiles
 - TDD (opcional, si hay tiempo).
 -------------------------------
 ---
-----------------
+-------
