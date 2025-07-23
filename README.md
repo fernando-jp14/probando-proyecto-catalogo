@@ -23,7 +23,7 @@
 | Yosias      | Scrum Master     |
 | Wilson      | Product Owner    |
 | Jhonson     | Developer        |
-| Alejandro   | Developer        |
+| Renzo       | Developer        |
 | Alex C.A    | Developer        |
 
 ---
