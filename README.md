@@ -29,10 +29,15 @@
 |#Historia de Usuario#|
 -------------------------------------------------------------------------------------------------------------------------------
 HU-001	Como administrador, quiero registrar un curso con nombre, duración, plataforma y dificultad para construir el catálogo.
+
 HU-002	Como visitante, quiero visualizar los cursos disponibles con sus detalles para elegir el que más me conviene.
+
 HU-003	Como administrador, quiero editar un curso ya registrado para corregir o actualizar su información.
+
 HU-004	Como administrador, quiero eliminar un curso para mantener actualizado el catálogo.
+
 HU-005	Como desarrollador, quiero aplicar validaciones para evitar campos vacíos.
+
 HU-006	Como desarrollador, quiero implementar pruebas automatizadas (TDD) para asegurar la calidad del código.
 -------------------------------------------------------------------------------------------------------------------------------
 
