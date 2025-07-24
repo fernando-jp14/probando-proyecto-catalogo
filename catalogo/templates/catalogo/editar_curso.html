@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Curso</title>
+  <link rel="stylesheet" href="{% static 'catalogo/style.css' %}">
+</head>
+<body>
+
+  <h2>Editar Curso</h2>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Actualizar</button>
+  </form>
+
+  <a href="{% url 'lista_cursos' %}">Volver</a>
+
+</body>
+</html>

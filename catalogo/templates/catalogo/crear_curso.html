@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Crear Curso</title>
+  <link rel="stylesheet" href="{% static 'catalogo/style.css' %}">
+</head>
+<body>
+
+  <h2>Crear Curso</h2>
+
+  {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li class="{{ message.tags }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+  </form>
+
+  <a href="{% url 'lista_cursos' %}">Volver a la lista</a>
+
+</body>
+</html>

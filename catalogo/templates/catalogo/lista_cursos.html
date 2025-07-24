@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Cursos</title>
+  <link rel="stylesheet" href="{% static 'catalogo/style.css' %}">
+</head>
+<body>
+
+  <h2>Lista de Cursos</h2>
+
+  {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li class="{{ message.tags }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <table>
+    <tr>
+      <th>Curso</th>
+      <th>Duración</th>
+      <th>Plataforma</th>
+      <th>Dificultad</th>
+      <th>Acciones</th>
+    </tr>
+    {% for curso in cursos %}
+    <tr>
+      <td>{{ curso.curso }}</td>
+      <td>{{ curso.duracion }}</td>
+      <td>{{ curso.plataforma }}</td>
+      <td>{{ curso.dificultad }}</td>
+      <td>
+        <a href="{% url 'editar_curso' curso.id %}">Editar</a> |
+        <a href="{% url 'eliminar_curso' curso.id %}">Eliminar</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <a href="{% url 'crear_curso' %}">+ Crear nuevo curso</a>
+
+</body>
+</html>
