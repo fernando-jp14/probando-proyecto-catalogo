@@ -3,15 +3,13 @@ from django.urls import reverse
 from .models import Curso
 from .forms import CursoForm
 
-# 🧱 TESTS DEL MODELO CURSO
+# 🧱 TESTS DEL MODELO Curso
 class CursoModelTest(TestCase):
     @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
+    def setUpTestData(cls):
         print("\n🔷 INICIANDO TESTS DEL MODELO Curso")
 
-    def test_creacion_curso_exitosa(self):
-        print("🧪 Test: creación de curso válida")
+    def test_crea_curso_con_campos_validos(self):
         curso = Curso.objects.create(
             curso='Python Básico',
             duracion='10 horas',
@@ -21,99 +19,93 @@ class CursoModelTest(TestCase):
         self.assertEqual(curso.curso, 'Python Básico')
         print("✅ Curso creado exitosamente")
 
-    def test_str_del_modelo(self):
-        print("🧪 Test: representación string del modelo")
+    def test_str_modelo_devuelve_nombre(self):
         curso = Curso(curso='Django Intermedio')
         self.assertEqual(str(curso), 'Django Intermedio')
-        print("✅ __str__ devuelve el nombre correctamente")
+        print("✅ __str__ funciona correctamente")
 
-    def test_dificultad_valida(self):
-        print("🧪 Test: dificultad pertenece a opciones válidas")
+    def test_dificultad_es_valida(self):
         curso = Curso(dificultad='Intermedio')
         self.assertIn(curso.dificultad, [op[0] for op in Curso.DIFICULTAD_OPCIONES])
-        print("✅ Dificultad válida confirmada")
+        print("✅ Dificultad dentro de opciones válidas")
 
 
-# 📋 TESTS DEL FORMULARIO
+# 📋 TESTS DEL FORMULARIO CursoForm
 class CursoFormTest(TestCase):
     @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
+    def setUpTestData(cls):
         print("\n🔷 INICIANDO TESTS DEL FORMULARIO CursoForm")
 
-    def test_formulario_valido(self):
-        print("🧪 Test: formulario con datos válidos")
-        form = CursoForm(data={
+    def test_form_valido_con_datos_correctos(self):
+        form_data = {
             'curso': 'Backend con Django',
             'duracion': '15 horas',
             'plataforma': 'Udemy',
             'dificultad': 'Avanzado'
-        })
+        }
+        form = CursoForm(data=form_data)
         self.assertTrue(form.is_valid())
-        print("✅ Formulario validado correctamente")
+        print("✅ Formulario válido con datos completos")
 
-    def test_error_nombre_corto(self):
-        print("🧪 Test: error por nombre de curso corto")
-        form = CursoForm(data={
+    def test_form_falla_por_nombre_corto(self):
+        form_data = {
             'curso': 'Py',
             'duracion': '8h',
             'plataforma': 'Platzi',
             'dificultad': 'Básico'
-        })
+        }
+        form = CursoForm(data=form_data)
         self.assertFalse(form.is_valid())
         self.assertIn('El nombre del curso debe tener al menos 3 caracteres.', form.errors['curso'])
-        print("✅ Error personalizado detectado correctamente")
+        print("✅ Nombre corto detectado correctamente")
 
-    def test_error_duracion_vacia(self):
-        print("🧪 Test: error por duración vacía")
-        form = CursoForm(data={
+    def test_form_falla_por_duracion_vacia(self):
+        form_data = {
             'curso': 'JavaScript',
             'duracion': '',
             'plataforma': 'Platzi',
             'dificultad': 'Básico'
-        })
+        }
+        form = CursoForm(data=form_data)
         self.assertFalse(form.is_valid())
         self.assertIn('La duración es obligatoria.', form.errors['duracion'])
-        print("✅ Validación de duración ejecutada correctamente")
+        print("✅ Duración vacía detectada correctamente")
 
-    def test_error_plataforma_vacia(self):
-        print("🧪 Test: error por plataforma vacía")
-        form = CursoForm(data={
+    def test_form_falla_por_plataforma_vacia(self):
+        form_data = {
             'curso': 'CSS Master',
             'duracion': '6h',
             'plataforma': '',
             'dificultad': 'Intermedio'
-        })
+        }
+        form = CursoForm(data=form_data)
         self.assertFalse(form.is_valid())
         self.assertIn('La plataforma es obligatoria.', form.errors['plataforma'])
-        print("✅ Validación de plataforma ejecutada correctamente")
+        print("✅ Plataforma vacía detectada correctamente")
 
 
 # 🌐 TESTS DE VISTAS
 class CursoViewsTest(TestCase):
     @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
+    def setUpTestData(cls):
         print("\n🔷 INICIANDO TESTS DE LAS VISTAS")
-
-    def setUp(self):
-        self.client = Client()
-        self.curso = Curso.objects.create(
+        cls.curso = Curso.objects.create(
             curso='Prueba',
             duracion='2 horas',
             plataforma='YouTube',
             dificultad='Básico'
         )
 
-    def test_lista_cursos_status(self):
-        print("🧪 Test: vista de lista de cursos")
+    def setUp(self):
+        self.client = Client()
+
+    def test_lista_cursos_carga_template(self):
         response = self.client.get(reverse('lista_cursos'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'catalogo/lista_cursos.html')
-        print("✅ Vista de lista cargada correctamente")
+        print("✅ Vista lista_cursos cargada correctamente")
 
-    def test_crear_curso_post_valido(self):
-        print("🧪 Test: crear curso vía POST")
+    def test_crear_curso_redirige_correctamente(self):
         response = self.client.post(reverse('crear_curso'), {
             'curso': 'Nuevo Curso',
             'duracion': '5h',
@@ -122,10 +114,9 @@ class CursoViewsTest(TestCase):
         })
         self.assertEqual(response.status_code, 302)
         self.assertEqual(Curso.objects.count(), 2)
-        print("✅ Curso creado y redirección exitosa")
+        print("✅ Curso creado y redirigido con éxito")
 
-    def test_editar_curso_post(self):
-        print("🧪 Test: editar curso existente")
+    def test_editar_actualiza_curso(self):
         response = self.client.post(reverse('editar_curso', args=[self.curso.id]), {
             'curso': 'Editado',
             'duracion': '3h',
@@ -137,25 +128,22 @@ class CursoViewsTest(TestCase):
         self.assertEqual(self.curso.curso, 'Editado')
         print("✅ Curso editado correctamente")
 
-    def test_eliminar_curso(self):
-        print("🧪 Test: eliminar curso por vista")
+    def test_eliminar_quita_curso(self):
         response = self.client.get(reverse('eliminar_curso', args=[self.curso.id]))
         self.assertEqual(response.status_code, 302)
         self.assertEqual(Curso.objects.count(), 0)
-        print("✅ Curso eliminado y redirigido correctamente")
+        print("✅ Curso eliminado correctamente")
 
 
 # 🛣️ TESTS DE URLS
 class CursoUrlsTest(TestCase):
     @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
+    def setUpTestData(cls):
         print("\n🔷 INICIANDO TESTS DE LAS URLS")
 
-    def test_urls_existentes(self):
-        print("🧪 Test: rutas configuradas correctamente")
+    def test_rutas_existentes_resuelven_bien(self):
         self.assertEqual(reverse('lista_cursos'), '/')
         self.assertEqual(reverse('crear_curso'), '/crear/')
         self.assertEqual(reverse('editar_curso', args=[1]), '/editar/1/')
         self.assertEqual(reverse('eliminar_curso', args=[1]), '/eliminar/1/')
-        print("✅ Rutas Django están funcionando bien")
+        print("✅ Todas las rutas están configuradas correctamente")
