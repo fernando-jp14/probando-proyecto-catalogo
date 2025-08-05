@@ -20,11 +20,11 @@
 
 | Nombre      | Rol              |
 |-------------|------------------|
-| Yosias      | Scrum Master     |
-| Wilson      | Product Owner    |
-| Jhonson     | Developer        |
-| Renzo       | Developer        |
-| Alex C.A    | Developer        |
+|             | Scrum Master     |
+|             | Product Owner    |
+|             | Developer        |
+|             | Developer        |
+|             | Developer        |
 
 |#Historia de Usuario#|
 -------------------------------------------------------------------------------------------------------------------------------
@@ -48,13 +48,13 @@ Inicio: Martes 22 de julio de 2025
 Fin: Miercoles 23 de julio de 2025
 Duración: 2 días
 
-Scrum Master: Yosias
+Scrum Master: 
 
-Developers: Alexander, Wilson, Renzo
+Developers: 
 
-PO simulado: Yosias
+PO simulado: 
 
-GITHUB: Jhonson
+GITHUB: 
 
 Actividades:
 
